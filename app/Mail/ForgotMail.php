@@ -13,7 +13,7 @@ class ForgotMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $token;
+     public $token;
 
     public function __construct($token)
     {
@@ -33,10 +33,10 @@ class ForgotMail extends Mailable
     /**
      * Get the message content definition.
      */
-    public function build()
+   public function build()
     {
         $data=$this->token;
-        return $this->view('mail.forgot',compact('data'))->subject('Password Reset Link');
+        return $this->view('mail.forgot',compact('data'))->subject('Forgot mail');
     }
 
     /**
